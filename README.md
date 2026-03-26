@@ -109,13 +109,11 @@ In addition to upstream permissions, this fork declares:
 
 ## Installation
 
-**This derivative is not the same package as the official BookmarkHub listing on the Chrome Web Store / Firefox Add-ons** (see [Licensing and attribution](#licensing-and-attribution)). Unless you publish your own store listing, install by **Load unpacked** (Chromium) after either **downloading a Release archive** or **building from source**; Firefox uses **temporary load** from a built or released package.
-
 ### Option A — Install from GitHub Releases (no Node.js)
 
-If maintainers attach a **pre-built Chromium extension** to [Releases](https://github.com/dudor/BookmarkHub/releases) (for example a `zip` produced by `npm run zip`, often named like `bookmarkhub-*-chrome.zip`; **use your fork’s Releases URL** if you do not use this upstream repo):
+Pre-built Chromium packages for this fork are published at **[GitHub Releases — jonas-pi/BookmarkHub](https://github.com/jonas-pi/BookmarkHub/releases)**. The attachment is usually **`bookmarkhub-*-chrome.zip`** (from `npm run zip`; same contents as `.output/chrome-mv3`).
 
-1. Open the repo’s **Releases** page and download the latest **extension zip** for Chrome / Chromium.
+1. Open **Releases** and download the **extension zip** for the version you want.
 2. **Extract** the archive to a folder on your computer.  
    - The folder you select in the next step must **directly contain `manifest.json`**.  
    - If the zip has **one top-level folder** inside it, open that folder—that inner directory should be the extension root with `manifest.json`.

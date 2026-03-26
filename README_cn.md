@@ -109,15 +109,11 @@
 
 ## 安装方式
 
-**本仓库是衍生版，与 Chrome 应用商店 / Firefox 附加组件站点上由原作者上架的「官方 BookmarkHub」安装包不是同一发行渠道**（详见上文 [许可与归属](#许可与归属对外分发必读)）。在未自行上架商店的前提下，常见做法是：在 **[GitHub Releases](https://github.com/dudor/BookmarkHub/releases)** 下载维护者上传的 **预构建 zip** 并 **解压** 后 **加载已解压的扩展程序**；或 **本地构建** 后再加载。Firefox 需使用 Release 中的 Firefox 包或本地 `build:firefox` 后 **临时加载**。
-
-> 若你使用自己的 fork，请把 Releases 链接换成 **你的仓库** 的 `https://github.com/<用户名>/<仓库名>/releases`。
-
 ### 方式一：从 Releases 下载（无需安装 Node.js）
 
-当维护者在 Release 附件中提供了 **Chromium 用扩展压缩包**（一般由 `npm run zip` 生成，文件名常见如 `bookmarkhub-*-chrome.zip`）时：
+本仓库维护者发布的 **Chromium 预构建包** 见：**[GitHub Releases — jonas-pi/BookmarkHub](https://github.com/jonas-pi/BookmarkHub/releases)**。附件一般为 **`bookmarkhub-*-chrome.zip`**（由 `npm run zip` 生成，内容与 `.output/chrome-mv3` 一致）。
 
-1. 打开本仓库 GitHub 页的 **Releases**，下载最新的 **扩展 zip**。  
+1. 打开上述 **Releases** 页面，下载所需版本的 **扩展 zip**。  
 2. 将 zip **解压**到本地任意目录。  
    - 在下一步里选中的文件夹**根目录下必须直接有 `manifest.json`**。  
    - 若解压后只有**一层子文件夹**，请进入该子文件夹确认其中有 `manifest.json`，加载时选这一层（有清单的目录）。  

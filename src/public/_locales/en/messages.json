@@ -1,10 +1,10 @@
 {
     "extensionName": {
-        "message": "BookmarkHub - sync bookmarks ",
+        "message": "HM-BookmarkHub - sync bookmarks",
         "description": ""
     },
     "extensionDescription": {
-        "message": "BookmarkHub,sync bookmarks across different browsers",
+        "message": "HM fork: GitHub Gist sync + semi-auto upload/pull + manual sync (HarmonyOS-friendly).",
         "description": ""
     },
     "uploadBookmarks": {
@@ -85,6 +85,122 @@
     },
     "removeAllBookmarksDesc": {
         "message": "Remove All Bookmarks, Please backup first",
+        "description": ""
+    },
+    "autoUploadAfterChange": {
+        "message": "Auto-upload after bookmark changes",
+        "description": "Debounced upload to Gist"
+    },
+    "autoUploadAfterChangeHint": {
+        "message": "Uploads about 4.5s after the last change. Clears local dirty flag on success; uses SyncDataInfo.createDate like the HM app.",
+        "description": ""
+    },
+    "autoPullInterval": {
+        "message": "Periodic pull from Gist",
+        "description": ""
+    },
+    "autoPullIntervalHint": {
+        "message": "Pulls when remote createDate is newer and local has no pending upload; also runs once on browser startup. Requires alarms permission.",
+        "description": ""
+    },
+    "autoPullOff": {
+        "message": "Off",
+        "description": ""
+    },
+    "autoPullEvery15": {
+        "message": "Every 15 minutes",
+        "description": ""
+    },
+    "autoPullEvery30": {
+        "message": "Every 30 minutes",
+        "description": ""
+    },
+    "autoPullEvery60": {
+        "message": "Every 60 minutes",
+        "description": ""
+    },
+    "manualSyncBookmarks": {
+        "message": "Manual sync",
+        "description": ""
+    },
+    "manualSyncBookmarksDesc": {
+        "message": "Compare Gist vs local (dirty + createDate): upload, download, or show up-to-date.",
+        "description": ""
+    },
+    "manualSyncUpToDate": {
+        "message": "Already in sync with Gist.",
+        "description": ""
+    },
+    "gistConfigIncomplete": {
+        "message": "Set GitHub Token, Gist ID, and file name in extension options first.",
+        "description": ""
+    },
+    "syncViaToolbarHint": {
+        "message": "Browsers do not allow buttons on the bookmarks bar. Use this extension icon (toolbar) — same row as the address bar on most layouts.",
+        "description": ""
+    },
+    "commandManualSync": {
+        "message": "Manual bookmark sync (same as HM app)",
+        "description": ""
+    },
+    "enableManualSyncHotkey": {
+        "message": "Keyboard shortcut for manual sync",
+        "description": ""
+    },
+    "enableManualSyncHotkeyHint": {
+        "message": "Default: Alt+Shift+G. Change under chrome://extensions/shortcuts (Edge: edge://extensions/shortcuts). Uses the same logic as the HarmonyOS app toolbar sync.",
+        "description": ""
+    },
+    "enableFloatingSyncButton": {
+        "message": "Floating sync button on web pages",
+        "description": ""
+    },
+    "enableFloatingSyncButtonHint": {
+        "message": "Shows a small draggable-style control on http(s) pages only (not chrome://). Click ↻ to run manual sync; use » to dock to the right edge. Reload tabs after toggling if the button does not appear.",
+        "description": ""
+    },
+    "floatingSyncHide": {
+        "message": "Dock to edge",
+        "description": ""
+    },
+    "floatingSyncPeek": {
+        "message": "HM",
+        "description": ""
+    },
+    "floatingSyncExpand": {
+        "message": "Expand sync button",
+        "description": ""
+    },
+    "floatingSyncDragHint": {
+        "message": "Drag to move",
+        "description": ""
+    },
+    "syncOnNewBookmark": {
+        "message": "Auto-upload when a new bookmark is added",
+        "description": ""
+    },
+    "syncOnNewBookmarkHint": {
+        "message": "Listens for the browser “bookmark added” event and queues the same debounced upload (4.5s) as other auto-sync. Works even if “Auto-upload after bookmark changes” is off. Editing/moving/removing still follow that option only.",
+        "description": ""
+    },
+    "showInPageSyncToast": {
+        "message": "In-page sync toast (top-right)",
+        "description": ""
+    },
+    "showInPageSyncToastHint": {
+        "message": "After upload/pull/manual sync, shows a small banner on the active http(s) tab (icon + “uploaded/pulled/synced”). Independent of system notifications. Respects light/dark mode.",
+        "description": ""
+    },
+    "inPageToastUploaded": {
+        "message": "Uploaded",
+        "description": ""
+    },
+    "inPageToastPulled": {
+        "message": "Pulled",
+        "description": ""
+    },
+    "inPageToastSynced": {
+        "message": "Up to date",
         "description": ""
     }
 }

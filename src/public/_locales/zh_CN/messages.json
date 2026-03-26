@@ -1,10 +1,10 @@
 {
     "extensionName": {
-        "message": "BookmarkHub - 书签同步",
+        "message": "HM-BookmarkHub - 书签同步",
         "description": ""
     },
     "extensionDescription": {
-        "message": "BookmarkHub，在不同浏览器之间同步你的书签",
+        "message": "HM 衍生版：GitHub Gist 同步、半自动上传/拉取、手动同步（可与鸿蒙端配合）。",
         "description": ""
     },
     "uploadBookmarks": {
@@ -85,6 +85,122 @@
     },
     "removeAllBookmarksDesc": {
         "message": "清空本地浏览器书签，请先做好备份",
+        "description": ""
+    },
+    "autoUploadAfterChange": {
+        "message": "书签变更后自动上传",
+        "description": "防抖上传到 Gist，需已配置 Token 与 Gist"
+    },
+    "autoUploadAfterChangeHint": {
+        "message": "编辑书签后约 4.5 秒无新变更则上传；成功后会清除「未同步」标记并与 HM 端共用 createDate 比对逻辑。",
+        "description": ""
+    },
+    "autoPullInterval": {
+        "message": "定时从 Gist 拉取",
+        "description": ""
+    },
+    "autoPullIntervalHint": {
+        "message": "远端 createDate 更新且本地无未上传修改时才会覆盖本地；同时会在浏览器启动时尝试拉取一次。需 alarms 权限。",
+        "description": ""
+    },
+    "autoPullOff": {
+        "message": "关闭",
+        "description": ""
+    },
+    "autoPullEvery15": {
+        "message": "每 15 分钟",
+        "description": ""
+    },
+    "autoPullEvery30": {
+        "message": "每 30 分钟",
+        "description": ""
+    },
+    "autoPullEvery60": {
+        "message": "每 60 分钟",
+        "description": ""
+    },
+    "manualSyncBookmarks": {
+        "message": "手动同步",
+        "description": ""
+    },
+    "manualSyncBookmarksDesc": {
+        "message": "按 Gist 与本地比对（dirty 与 createDate）：上传、下载或提示已同步。",
+        "description": ""
+    },
+    "manualSyncUpToDate": {
+        "message": "已与 Gist 一致，无需操作。",
+        "description": ""
+    },
+    "gistConfigIncomplete": {
+        "message": "请先在扩展选项中填写 GitHub Token、Gist ID 与文件名。",
+        "description": ""
+    },
+    "syncViaToolbarHint": {
+        "message": "浏览器不允许在书签栏嵌入扩展按钮；请点工具栏本扩展图标（一般在地址栏右侧，与书签栏同一带区上方）。",
+        "description": ""
+    },
+    "commandManualSync": {
+        "message": "手动同步书签（与鸿蒙端一致）",
+        "description": ""
+    },
+    "enableManualSyncHotkey": {
+        "message": "启用快捷键手动同步",
+        "description": ""
+    },
+    "enableManualSyncHotkeyHint": {
+        "message": "默认 Alt+Shift+G。可在 chrome://extensions/shortcuts（Edge 为 edge://extensions/shortcuts）中修改。逻辑与鸿蒙收藏顶栏「手动同步」相同（dirty / createDate）。",
+        "description": ""
+    },
+    "enableFloatingSyncButton": {
+        "message": "在网页上显示悬浮同步按钮",
+        "description": ""
+    },
+    "enableFloatingSyncButtonHint": {
+        "message": "仅在 http/https 页面显示；点击 ↻ 触发手动同步，点 » 可贴靠右侧收起为竖条。关闭后需刷新已打开标签页才会消失。",
+        "description": ""
+    },
+    "floatingSyncHide": {
+        "message": "贴边收起",
+        "description": ""
+    },
+    "floatingSyncPeek": {
+        "message": "HM",
+        "description": ""
+    },
+    "floatingSyncExpand": {
+        "message": "展开同步按钮",
+        "description": ""
+    },
+    "floatingSyncDragHint": {
+        "message": "拖动移动位置",
+        "description": ""
+    },
+    "syncOnNewBookmark": {
+        "message": "新增收藏时自动上传",
+        "description": ""
+    },
+    "syncOnNewBookmarkHint": {
+        "message": "监听浏览器「添加书签」事件，与其它自动同步一样走约 4.5 秒防抖上传。关闭「书签变更后自动上传」时仍可对「仅新增」生效；改标题/移动/删除仍只受「书签变更后自动上传」控制。",
+        "description": ""
+    },
+    "showInPageSyncToast": {
+        "message": "网页右上角同步提示",
+        "description": ""
+    },
+    "showInPageSyncToastHint": {
+        "message": "上传/拉取/手动同步成功后，在当前活动的 http(s) 标签页右上角显示轻提示（扩展图标 + 已上传/已拉取/已同步）。与系统通知独立，可单独关闭。随系统深浅色自动适配。",
+        "description": ""
+    },
+    "inPageToastUploaded": {
+        "message": "已上传",
+        "description": ""
+    },
+    "inPageToastPulled": {
+        "message": "已拉取",
+        "description": ""
+    },
+    "inPageToastSynced": {
+        "message": "已同步",
         "description": ""
     }
 }

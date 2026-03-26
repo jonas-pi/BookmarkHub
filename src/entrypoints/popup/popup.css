@@ -1,8 +1,25 @@
 #root {
-    width: 15rem;
-    min-height: 11rem;
+    /* 加宽以容纳「手动同步」与菜单项不换行 */
+    width: 19rem;
+    min-width: 17rem;
+    min-height: 12rem;
     height: auto;
     position: relative;
+    box-sizing: border-box;
+    padding: 8px 8px 4px;
+}
+
+.hm-popup-toolbar-hint {
+    font-size: 11px;
+    line-height: 1.35;
+    margin-bottom: 8px;
+    color: #6c757d;
+}
+
+.hm-manual-sync-btn {
+    font-size: 13px !important;
+    font-weight: 600;
+    margin-bottom: 6px !important;
 }
 
 .list-group-item {

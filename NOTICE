@@ -1,0 +1,24 @@
+# 第三方修改版归属说明 / Third-Party Modified Distribution Notice
+
+本分发包包含基于 BookmarkHub 上游项目修改后的软件。
+
+## 上游作品 / Upstream work
+
+- **项目名称 / Name:** BookmarkHub  
+- **上游仓库 / Repository:** https://github.com/dudor/BookmarkHub  
+- **许可证 / License:** Apache License, Version 2.0（完整文本见仓库根目录 `LICENSE`）
+
+上游作品的著作权由原作者及贡献者享有，详见上游仓库中的版权声明与提交记录。
+
+## 本分发中的修改 / Modifications in this distribution
+
+对上游源代码的实质性修改见根目录 `README.md` 中「相对上游的变更」一节。
+
+**修改部分的著作权声明（请发布前替换方括号内容）：**  
+Copyright (c) 2026 [请填写你的姓名或组织名称]
+
+修改部分在未被单独标注其他许可证的前提下，同样以 **Apache License, Version 2.0** 授权（与 `LICENSE` 一致）。
+
+---
+
+*本文件用于满足 Apache License 2.0 对再分发时保留归属信息的要求；不构成法律意见。*

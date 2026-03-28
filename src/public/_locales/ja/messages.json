@@ -39,16 +39,52 @@
         "message": "リモートのブックマーク数",
         "description": ""
     },
+    "syncProvider": {
+        "message": "Cloud provider",
+        "description": ""
+    },
+    "syncProviderGithub": {
+        "message": "GitHub Gist",
+        "description": ""
+    },
+    "syncProviderGitee": {
+        "message": "Gitee code snippet",
+        "description": ""
+    },
+    "syncProviderHint": {
+        "message": "Same BookmarkHub JSON format; tokens and snippet IDs are not interchangeable between providers.",
+        "description": ""
+    },
     "githubToken": {
         "message": "GitHub トークン",
+        "description": ""
+    },
+    "accessToken": {
+        "message": "Access token",
+        "description": ""
+    },
+    "getGithubPat": {
+        "message": "Get GitHub token",
+        "description": ""
+    },
+    "getGiteePat": {
+        "message": "Get Gitee token",
         "description": ""
     },
     "gistID": {
         "message": "Gist ID",
         "description": ""
     },
+    "snippetId": {
+        "message": "Snippet ID",
+        "description": ""
+    },
     "gistFileName": {
         "message": "Gist ファイル名",
+        "description": ""
+    },
+    "snippetFileName": {
+        "message": "File name in snippet",
         "description": ""
     },
     "enableNotifications": {

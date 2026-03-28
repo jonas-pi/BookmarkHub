@@ -8,7 +8,7 @@
   "private": true,
   "version": "0.0.6",
   "type": "module",
-  "author": "dudor",
+  "author": "jonas-pi",
   "license": "Apache-2.0",
   "scripts": {
     "dev": "wxt",

@@ -2,13 +2,15 @@
 
 本分发包包含基于 BookmarkHub 上游项目修改后的软件。
 
-## 上游作品 / Upstream work
+## 本仓库（用户请访问此地址获取本衍生版） / This fork
 
-- **项目名称 / Name:** BookmarkHub  
-- **上游仓库 / Repository:** https://github.com/dudor/BookmarkHub  
+- **项目名称 / Name:** BookmarkHub（衍生版）  
+- **维护仓库 / Repository:** https://github.com/jonas-pi/BookmarkHub  
 - **许可证 / License:** Apache License, Version 2.0（完整文本见仓库根目录 `LICENSE`）
 
-上游作品的著作权由原作者及贡献者享有，详见上游仓库中的版权声明与提交记录。
+## 上游作品 / Upstream work
+
+- 上游作品基于开源项目 BookmarkHub（Apache-2.0）；原作者及早期版本的著作权与贡献记录以各文件头、提交历史及上游惯例为准。
 
 ## 本分发中的修改 / Modifications in this distribution
 

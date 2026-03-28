@@ -4,7 +4,7 @@
         "description": ""
     },
     "extensionDescription": {
-        "message": "HM 衍生版：GitHub Gist 同步、半自动上传/拉取、手动同步（可与鸿蒙端配合）。",
+        "message": "HM 衍生版：GitHub Gist 或 Gitee 代码片段同步、半自动上传/拉取、手动同步（可与鸿蒙端配合）。",
         "description": ""
     },
     "uploadBookmarks": {
@@ -39,16 +39,52 @@
         "message": "远程书签数量",
         "description": ""
     },
+    "syncProvider": {
+        "message": "云端类型",
+        "description": ""
+    },
+    "syncProviderGithub": {
+        "message": "GitHub Gist",
+        "description": ""
+    },
+    "syncProviderGitee": {
+        "message": "Gitee 代码片段",
+        "description": ""
+    },
+    "syncProviderHint": {
+        "message": "书签数据格式相同；令牌与片段 ID 在两种云端之间不可混用。",
+        "description": ""
+    },
     "githubToken": {
         "message": "Github Token",
+        "description": ""
+    },
+    "accessToken": {
+        "message": "访问令牌",
+        "description": ""
+    },
+    "getGithubPat": {
+        "message": "获取 GitHub 令牌",
+        "description": ""
+    },
+    "getGiteePat": {
+        "message": "获取 Gitee 令牌",
         "description": ""
     },
     "gistID": {
         "message": "Gist ID",
         "description": ""
     },
+    "snippetId": {
+        "message": "片段 ID",
+        "description": ""
+    },
     "gistFileName": {
         "message": "Gist文件名",
+        "description": ""
+    },
+    "snippetFileName": {
+        "message": "片段内文件名",
         "description": ""
     },
     "enableNotifications": {

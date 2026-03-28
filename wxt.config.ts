@@ -11,7 +11,11 @@ export default defineConfig({
     default_locale: 'en',
     /** tabs：向当前活动 http(s) 标签页发送页内同步提示 */
     permissions: ['storage', 'bookmarks', 'notifications', 'alarms', 'tabs'],
-    host_permissions: ["https://*.github.com/", "https://*.githubusercontent.com/"],
+    host_permissions: [
+      "https://*.github.com/",
+      "https://*.githubusercontent.com/",
+      "https://gitee.com/",
+    ],
     optional_host_permissions: [
       "*://*/*",
     ],

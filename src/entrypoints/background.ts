@@ -226,7 +226,14 @@ export default defineBackground(() => {
     if (areaName !== 'sync') {
       return
     }
-    const keys = ['autoPullPeriodMinutes', 'autoUploadAfterChange', 'githubToken', 'gistID', 'gistFileName']
+    const keys = [
+      'autoPullPeriodMinutes',
+      'autoUploadAfterChange',
+      'gistProvider',
+      'githubToken',
+      'gistID',
+      'gistFileName',
+    ]
     if (keys.some((k) => Object.prototype.hasOwnProperty.call(changes, k))) {
       void rescheduleAutoPullAlarm()
     }

@@ -1,30 +1,36 @@
 import { Setting } from './setting'
-import { http } from './http'
+import { fetchSnippetJson, fetchSnippetRawUrl, patchSnippet, listSnippets } from './gistClient'
+
 class BookmarkService {
-    async get() {
-        let setting = await Setting.build();
-        let resp = await http.get(`gists/${setting.gistID}`).json() as any
-        if (resp?.files) {
-            let filenames = Object.keys(resp.files);
-            if (filenames.indexOf(setting.gistFileName) !== -1) {
-                let gistFile = resp.files[setting.gistFileName]
-                if (gistFile.truncated) {
-                    const txt = http.get(gistFile.raw_url, {prefixUrl: ''}).text();
-                    return txt;
-                } else {
-                    return gistFile.content
-                }
-            }
+  async get() {
+    const setting = await Setting.build()
+    const resp = (await fetchSnippetJson(setting)) as {
+      files?: Record<string, { truncated?: boolean; content?: string; raw_url?: string }>
+    }
+    if (resp?.files) {
+      const filenames = Object.keys(resp.files)
+      if (filenames.indexOf(setting.gistFileName) !== -1) {
+        const gistFile = resp.files[setting.gistFileName]
+        if (gistFile.truncated && gistFile.raw_url) {
+          return fetchSnippetRawUrl(setting, gistFile.raw_url)
         }
-        return null;
+        if (gistFile.content != null) {
+          return gistFile.content
+        }
+      }
     }
-    async getAllGist() {
-        return http.get('gists').json();
-    }
-    async update(data: any) {
-        let setting = await Setting.build();
-        return http.patch(`gists/${setting.gistID}`, { json: data }).json();
-    }
+    return null
+  }
+
+  async getAllGist() {
+    const setting = await Setting.build()
+    return listSnippets(setting)
+  }
+
+  async update(data: Record<string, unknown>) {
+    const setting = await Setting.build()
+    return patchSnippet(setting, data)
+  }
 }
 
 export default new BookmarkService()

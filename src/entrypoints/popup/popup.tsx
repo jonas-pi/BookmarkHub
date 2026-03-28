@@ -79,9 +79,9 @@ const Popup: React.FC = () => {
                 <Dropdown.Divider />
                 <Dropdown.Item name='setting' as="button"><AiOutlineSetting />{browser.i18n.getMessage('settings')}</Dropdown.Item>
                 <Dropdown.ItemText>
-                    <AiOutlineInfoCircle /><a href="https://github.com/dudor/BookmarkHub" target="_blank">{browser.i18n.getMessage('help')}</a>|
+                    <AiOutlineInfoCircle /><a href="https://github.com/jonas-pi/BookmarkHub" target="_blank" rel="noreferrer">{browser.i18n.getMessage('help')}</a>|
                     <Badge id="localCount" variant="light" title={browser.i18n.getMessage('localCount')}>{count["local"]}</Badge>/<Badge id="remoteCount" variant="light" title={browser.i18n.getMessage('remoteCount')}>{count["remote"]}</Badge>|
-                    <a href="https://github.com/dudor" target="_blank" title={browser.i18n.getMessage('author')}><AiOutlineGithub /></a>
+                    <a href="https://github.com/jonas-pi" target="_blank" rel="noreferrer" title={browser.i18n.getMessage('author')}><AiOutlineGithub /></a>
                 </Dropdown.ItemText>
             </Dropdown.Menu >
         </IconContext.Provider>

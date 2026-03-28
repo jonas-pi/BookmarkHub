@@ -3,6 +3,8 @@ import OptionsSync from 'webext-options-sync';
 
 export default new OptionsSync({
     defaults: {
+        /** github | gitee */
+        gistProvider: 'github',
         githubToken: '',
         gistID: '',
         gistFileName: 'BookmarkHub',

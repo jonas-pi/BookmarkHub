@@ -6,7 +6,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './options.css'
 import optionsStorage from '../../utils/optionsStorage'
 const Popup: React.FC = () => {
-    const { register, setValue } = useForm();
+    const { register, watch } = useForm();
+    const gistProvider = watch('gistProvider');
     useEffect(() => {
         optionsStorage.syncForm('#formOptions');
     }, [])
@@ -15,27 +16,48 @@ const Popup: React.FC = () => {
         <Container fluid>
             <Form id='formOptions' name='formOptions'>
                 <Form.Group as={Row}>
-                    <Form.Label column="sm" sm={3} lg={2} xs={3}>{browser.i18n.getMessage('githubToken')}</Form.Label>
+                    <Form.Label column="sm" sm={3} lg={2} xs={3}>{browser.i18n.getMessage('syncProvider')}</Form.Label>
+                    <Col sm={9} lg={10} xs={9}>
+                        <Form.Control as="select" name="gistProvider" ref={register} size="sm">
+                            <option value="github">{browser.i18n.getMessage('syncProviderGithub')}</option>
+                            <option value="gitee">{browser.i18n.getMessage('syncProviderGitee')}</option>
+                        </Form.Control>
+                        <Form.Text className="text-muted">{browser.i18n.getMessage('syncProviderHint')}</Form.Text>
+                    </Col>
+                </Form.Group>
+
+                <Form.Group as={Row}>
+                    <Form.Label column="sm" sm={3} lg={2} xs={3}>{browser.i18n.getMessage('accessToken')}</Form.Label>
                     <Col sm={9} lg={10} xs={9}>
                         <InputGroup size="sm">
-                            <Form.Control name="githubToken" ref={register} type="text" placeholder="github token" size="sm" />
+                            <Form.Control
+                                name="githubToken"
+                                ref={register}
+                                type="text"
+                                placeholder={gistProvider === 'gitee' ? 'Gitee private token' : 'ghp_…'}
+                                size="sm"
+                            />
                             <InputGroup.Append>
-                                <Button variant="outline-secondary" as="a" target="_blank" href="https://github.com/settings/tokens/new" size="sm">Get Token</Button>
+                                {gistProvider === 'gitee' ? (
+                                    <Button variant="outline-secondary" as="a" target="_blank" rel="noreferrer" href="https://gitee.com/personal_access_tokens" size="sm">{browser.i18n.getMessage('getGiteePat')}</Button>
+                                ) : (
+                                    <Button variant="outline-secondary" as="a" target="_blank" rel="noreferrer" href="https://github.com/settings/tokens/new" size="sm">{browser.i18n.getMessage('getGithubPat')}</Button>
+                                )}
                             </InputGroup.Append>
                         </InputGroup>
                     </Col>
                 </Form.Group>
 
                 <Form.Group as={Row}>
-                    <Form.Label column="sm" sm={3} lg={2} xs={3}>{browser.i18n.getMessage('gistID')}</Form.Label>
+                    <Form.Label column="sm" sm={3} lg={2} xs={3}>{browser.i18n.getMessage('snippetId')}</Form.Label>
                     <Col sm={9} lg={10} xs={9}>
-                        <Form.Control name="gistID" ref={register} type="text" placeholder="gist ID" size="sm" />
+                        <Form.Control name="gistID" ref={register} type="text" placeholder="snippet id" size="sm" />
                     </Col>
                 </Form.Group>
                 <Form.Group as={Row}>
-                    <Form.Label column="sm" sm={3} lg={2} xs={3}>{browser.i18n.getMessage('gistFileName')}</Form.Label>
+                    <Form.Label column="sm" sm={3} lg={2} xs={3}>{browser.i18n.getMessage('snippetFileName')}</Form.Label>
                     <Col sm={9} lg={10} xs={9}>
-                        <Form.Control name="gistFileName" ref={register} type="text" placeholder="gist file name" size="sm" />
+                        <Form.Control name="gistFileName" ref={register} type="text" placeholder="BookmarkHub" size="sm" />
                     </Col>
                 </Form.Group>
                 <Form.Group as={Row}>
@@ -49,7 +71,7 @@ const Popup: React.FC = () => {
                         />
                     </Col>
                 </Form.Group>
-                {/* 半自动同步：仍使用 GitHub Gist，与 HM 端 createDate + dirty 语义对齐 */}
+                {/* 半自动同步：GitHub Gist / Gitee 片段，与 HM 端 createDate + dirty 语义对齐 */}
                 <Form.Group as={Row}>
                     <Form.Label column="sm" sm={3} lg={2} xs={3}>{browser.i18n.getMessage('autoUploadAfterChange')}</Form.Label>
                     <Col sm={9} lg={10} xs={9}>
@@ -126,7 +148,7 @@ const Popup: React.FC = () => {
                 <Form.Group as={Row}>
                     <Form.Label column="sm" sm={3} lg={2} xs={3}></Form.Label>
                     <Col sm={9} lg={10} xs={9}>
-                        <a href="https://github.com/dudor/BookmarkHub" target="_blank">{browser.i18n.getMessage('help')}</a>
+                        <a href="https://github.com/jonas-pi/BookmarkHub" target="_blank" rel="noreferrer">{browser.i18n.getMessage('help')}</a>
                     </Col>
                 </Form.Group>
             </Form>

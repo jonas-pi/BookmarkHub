@@ -3,6 +3,8 @@ import optionsStorage from './optionsStorage'
 export class SettingBase implements Options {
     constructor() { }
     [key: string]: string | number | boolean;
+    /** `github` | `gitee`，与 HM 端 gistProvider 一致 */
+    gistProvider: string = 'github';
     githubToken: string = '';
     gistID: string = '';
     gistFileName: string = 'BookmarkHub';
@@ -18,12 +20,13 @@ export class SettingBase implements Options {
 export class Setting extends SettingBase {
     private constructor() { super() }
     static async build() {
-        let options = await optionsStorage.getAll();
+        const options = await optionsStorage.getAll() as Record<string, string | number | boolean>;
         let setting = new Setting();
-        setting.gistID = options.gistID;
-        setting.gistFileName = options.gistFileName;
-        setting.githubToken = options.githubToken;
-        setting.enableNotify = options.enableNotify;
+        setting.gistProvider = options.gistProvider === 'gitee' ? 'gitee' : 'github';
+        setting.gistID = String(options.gistID ?? '');
+        setting.gistFileName = String(options.gistFileName ?? '');
+        setting.githubToken = String(options.githubToken ?? '');
+        setting.enableNotify = options.enableNotify !== false;
         setting.autoUploadAfterChange = options.autoUploadAfterChange === true;
         const ap = Number(options.autoPullPeriodMinutes);
         setting.autoPullPeriodMinutes = Number.isFinite(ap) && ap >= 0 ? Math.floor(ap) : 0;
